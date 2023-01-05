@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCore Demo</title>
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head> 
+<body>
+    <main class="main">
+        <div class='form--wrapper'>
+            <form id="form">
+                <div class='form--top'>
+                <input id='merchant-name' type="text" placeholder='Merchant Name' value='Merchant Name' required/>
+                <input id='invoice' type="text" placeholder='Invoice' value='1'required/>
+                <input id='order-key' type="text" placeholder='Order Key' value='1' required/>
+                <input id='merchant-addr' type="text" placeholder='Merchant Address' value='ecash:qpujhpzn2prltsm8evglcz0q5tdzr90nkck7q842kv' required/>
+                <input id='amount' type="text" placeholder='Amount' value='1' required/>
+                <input id='offer-name' type="text" placeholder='Offer Name'/>
+                <input id='offer-description' type="text" placeholder='Offer Description'/>
+                <input id='success-url' type="text" placeholder='Success Url'/>
+                <input id='cancel-url' type="text" placeholder='Cancel Url'/>
+                <input id='ipn-url' type="text" placeholder='IPN Url'/>
+                <label class="switch">
+                    <input id="return-json" type="checkbox" value='true' checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <button type='submit'>Create</button>
+            </form>
+            <div id="output"></div>
+          </div>
+      </main>
+      <script src="/script.js" type="text/javascript"></script>
+</body>
+</html>
