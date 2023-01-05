@@ -29,10 +29,9 @@ app.post('/invoice', (request, response) => {
 })
 
 app.post('/ipn', (request, response) => {
-    
-    ipnDB.insert(request.body);
-    console.log(request);
-    
+    console.log(request.json);
+    console.log(request.body);
+    console.log(request.callback);
     response.json({
         status: 'success',
     })
