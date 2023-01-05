@@ -2,7 +2,9 @@ const express = require('express');
 const Datastore = require('nedb');
 const app = express();
 require('dotenv').config
-app.listen(3000, () => console.log('Server is Live'))
+
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`Server is Live at ${port}`))
 app.use(express.static('public'));
 app.use(express.json({limit: '5mb' }));
 
