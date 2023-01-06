@@ -3,9 +3,6 @@ const Datastore = require('nedb');
 const axios = require('axios');
 const app = express();
 
-// Load environment variables from .env file
-require('dotenv').config();
-
 // Set the server port to the value specified in the PORT environment variable,
 // or to 3000 if PORT is not set
 const port = process.env.PORT || 3000
