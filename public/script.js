@@ -1,8 +1,8 @@
 const form = document.getElementById("form");
 async function handleForm(event) { 
-    event.preventDefault(); // Prevent page refresh
-    const uri = 'https://bux.digital/v1/pay/?', // Payment URL
-        params = { // Create parameters
+    event.preventDefault(); 
+    const uri = 'https://bux.digital/v1/pay/?', 
+        params = {
             merchant_name: document.getElementById('merchant-name').value,
             invoice: document.getElementById('invoice').value,
             order_key: document.getElementById('order-key').value,
@@ -15,15 +15,15 @@ async function handleForm(event) {
             ipn_url: 'https://' + document.getElementById('ipn-url').value,
             return_json: document.getElementById('return-json').value
         };
-    let invoiceUri = uri + new URLSearchParams(params).toString(),  // Convert params to URL
-        invoiceHeader = new Headers(); // Define headers
-    invoiceHeader.append('Content-Type', 'application/json'); // Append headers
-    const invoice = new Request(invoiceUri, { // Define GET request for invoice
+    let invoiceUri = uri + new URLSearchParams(params).toString(),
+        invoiceHeader = new Headers(); 
+    invoiceHeader.append('Content-Type', 'application/json'); 
+    const invoice = new Request(invoiceUri, { 
         method: 'GET',
         headers: invoiceHeader,
         mode: 'cors'
         });
-    await fetch(invoice) // Fetch invoice API
+    await fetch(invoice)
         .then(response => response.json())
         .then((data) => {
             paymentUrl = data.paymentUrl;
@@ -43,7 +43,7 @@ async function handleForm(event) {
                 });
         })
         .catch((err) => {
-            console.log('ERROR:', err.message); // Console Log error
+            console.log('ERROR:', err.message); 
         });
 } 
 form.addEventListener('submit', handleForm);
