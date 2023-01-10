@@ -10,9 +10,9 @@ async function handleForm(event) {
             amount: document.getElementById('amount').value,
             offer_name: document.getElementById('offer-name').value,
             offer_description: document.getElementById('offer-description').value,
-            success_url: 'https://' + document.getElementById('success-url').value,
-            cancel_url: 'https://' + document.getElementById('cancel-url').value,
-            ipn_url: 'https://' + document.getElementById('ipn-url').value,
+            success_url: document.getElementById('success-url').value,
+            cancel_url: document.getElementById('cancel-url').value,
+            ipn_url: document.getElementById('ipn-url').value,
             return_json: document.getElementById('return-json').value
         };
     let invoiceUri = uri + new URLSearchParams(params).toString(),
